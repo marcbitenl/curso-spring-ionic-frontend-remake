@@ -3,18 +3,23 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { ProdutoDTO } from '../../models/produto.dto';
 import { API_CONFIG } from '../../config/api.config';
 import { ProdutoService } from '../../services/produto.service';
+
+
 @IonicPage()
 @Component({
   selector: 'page-produtos',
   templateUrl: 'produtos.html',
 })
 export class ProdutosPage {
+
   items : ProdutoDTO[];
+
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
     public produtoService: ProdutoService) {
   }
+
   ionViewDidLoad() {
     let categoria_id = this.navParams.get('categoria_id');
     this.produtoService.findByCategoria(categoria_id)
@@ -36,7 +41,7 @@ export class ProdutosPage {
     }
   }
 
-  showDetail() {
-    this.navCtrl.push('ProdutoDetailPage');
+  showDetail(produto_id : string) {
+    this.navCtrl.push('ProdutoDetailPage', {produto_id: produto_id});
   }
 }
