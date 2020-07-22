@@ -1,9 +1,8 @@
-import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { ProdutoDTO } from '../../models/produto.dto';
-import { API_CONFIG } from '../../config/api.config';
-import { ProdutoService } from '../../services/produto.service';
-
+import { ProdutoDTO } from "../../models/produto.dto";
+import { NavController, NavParams, IonicPage } from "ionic-angular";
+import { ProdutoService } from "../../services/produto.service";
+import { API_CONFIG } from "../../config/api.config";
+import { Component } from "@angular/core";
 
 @IonicPage()
 @Component({
